@@ -11,6 +11,14 @@ on your code in the working directory, like this:
 
     docker run -v=$(pwd):/app --workdir=/app coala/base coala --ci
 
+You can preserve the cache by creating another volume for
+``/root/.local/share/coala``, like this:
+
+::
+
+    docker run -v=$(pwd):/app -v=~/.local/share/coala:/root/.local/share/coala \
+    --workdir=/app coala/base coala --ci
+
 .. seealso::
   See also https://hub.docker.com/r/coala/base/.
 
